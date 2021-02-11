@@ -5,3 +5,7 @@ variable dockerhub_credentials{
 variable codestar_connector_credentials {
     type = string
 }
+
+variable "cloud-admins" {
+    type = list(string)
+}
