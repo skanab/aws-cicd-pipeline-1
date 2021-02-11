@@ -56,7 +56,7 @@ resource "aws_codepipeline" "cicd_pipeline" {
 
     artifact_store {
         type="S3"
-        location = aws_s3_bucket.codepipeline_artifacts.id
+        location = aws_s3_bucket.codepipeline-artifacts.id
     }
 
     stage {
@@ -69,7 +69,7 @@ resource "aws_codepipeline" "cicd_pipeline" {
             version = "1"
             output_artifacts = ["tf-code"]
             configuration = {
-                FullRepositoryId = "davoclock/aws-cicd-pipeline"
+                FullRepositoryId = "skanab/aws-cicd-pipeline-1"
                 BranchName   = "master"
                 ConnectionArn = var.codestar_connector_credentials
                 OutputArtifactFormat = "CODE_ZIP"
